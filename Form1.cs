@@ -18,7 +18,9 @@ namespace WeightManagement
             string name = textBox5.Text;
             string height_Text = textBox2.Text;
             double height;
-
+            string weight_Text = textBox1.Text;
+            double weight;
+            
 
             if (String.IsNullOrEmpty(name))
                 {
@@ -41,9 +43,27 @@ namespace WeightManagement
                 return;
             }
 
+            if (String.IsNullOrEmpty(weight_Text))
+            {
+                MessageBox.Show("please enter your Weight!");
+                return;
+            }
+            if (!double.TryParse(weight_Text, out weight))
+            {
+                MessageBox.Show("please enter a number for your weight!");
+                return;
+            }
+            if (weight <= 0)
+            {
+                MessageBox.Show("please enter a number bigger than 0 for your weight");
+                return;
+            }
+            User person = new User(name, height, weight);
+
 
 
             MessageBox.Show("Hi " + name + " you are underweight");
         }
+
     }
 }
