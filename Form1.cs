@@ -20,14 +20,15 @@ namespace WeightManagement
             double height;
             string weight_Text = textBox1.Text;
             double weight;
-            
+            string email = textBox3.Text;
+            double bmi =
 
-            if (String.IsNullOrEmpty(name))
+            if (String.IsNullOrWhiteSpace(name))
                 {
                 MessageBox.Show("please enter your Name!");
                 return;
             }
-            if (String.IsNullOrEmpty(height_Text))
+            if (String.IsNullOrWhiteSpace(height_Text))
             {
                 MessageBox.Show("please enter your Height!");
                 return;
@@ -43,7 +44,7 @@ namespace WeightManagement
                 return;
             }
 
-            if (String.IsNullOrEmpty(weight_Text))
+            if (String.IsNullOrWhiteSpace(weight_Text))
             {
                 MessageBox.Show("please enter your Weight!");
                 return;
@@ -58,7 +59,17 @@ namespace WeightManagement
                 MessageBox.Show("please enter a number bigger than 0 for your weight");
                 return;
             }
-            User person = new User(name, height, weight);
+            if (String.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("please enter your email!");
+                return;
+            }
+            private static double Bmi(double height, double weight)
+            {
+                return (weight / height * height) * 703;
+            }
+
+            //User person = new User(name, height, weight);//
 
 
 
