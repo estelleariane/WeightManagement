@@ -21,7 +21,6 @@ namespace WeightManagement
             string weight_Text = textBox1.Text;
             double weight;
             string email = textBox3.Text;
-            double bmi =
 
             if (String.IsNullOrWhiteSpace(name))
                 {
@@ -64,7 +63,8 @@ namespace WeightManagement
                 MessageBox.Show("please enter your email!");
                 return;
             }
-            private static double Bmi(double height, double weight)
+
+            static double Bmi(double height, double weight)
             {
                 return (weight / height * height) * 703;
             }
@@ -73,7 +73,7 @@ namespace WeightManagement
 
 
 
-            MessageBox.Show("Hi " + name + " you are underweight");
+            MessageBox.Show("Hi " + name + " your BMI is" + Bmi);
         }
 
     }
