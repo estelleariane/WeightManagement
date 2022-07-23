@@ -1,5 +1,6 @@
 namespace WeightManagement
 {
+    using System.Text.RegularExpressions;
     using System.Windows.Forms;
     public partial class Form1 : Form
     {
@@ -23,7 +24,7 @@ namespace WeightManagement
             string email = textBox3.Text;
 
             if (String.IsNullOrWhiteSpace(name))
-                {
+            {
                 MessageBox.Show("please enter your Name!");
                 return;
             }
@@ -34,7 +35,8 @@ namespace WeightManagement
             }
             if (!double.TryParse(height_Text, out height))
             {
-                MessageBox.Show("please enter a number for your height!");
+                MessageBox.Show("please enter a valid number for your height!");
+                ErrorLogging("please enter a valid number for your height!");
                 return;
             }
             if (height <= 0)
@@ -64,17 +66,48 @@ namespace WeightManagement
                 return;
             }
 
-            static double Bmi(double height, double weight)
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+            if (!match.Success)
             {
-                return (weight / height * height) * 703;
+                MessageBox.Show("your email is not valid!");
+                return;
             }
 
-            //User person = new User(name, height, weight);//
+            if (heightUnit.Text == "FT")
+            {
+                height = height / 3.28084;
+            }
 
+            if (weightUnit.Text == "LB")
+            {
+                weight = weight / 2.20462262185;
+            }
 
+            User person = new User(Name, email, weight, height);
 
-            MessageBox.Show("Hi " + name + " your BMI is" + Bmi);
+            if (person.BMi <= 18.4)
+            {
+                MessageBox.Show("your BMI is " + person.BMi + " you are underweight!");
+            }
+
         }
 
+        private void ErrorLogging(String message)
+        {
+            string strPath = @"C:\Temp\Log.txt";
+            if (!File.Exists(strPath))
+            {
+                File.Create(strPath).Dispose();
+            }
+            using (StreamWriter sw = File.AppendText(strPath))
+            {
+                sw.WriteLine("=============Error Logging ===========");
+                sw.WriteLine("===========Start============= " + DateTime.Now);
+                sw.WriteLine("Error Message: " + message);
+                sw.WriteLine("===========End============= " + DateTime.Now);
+
+            }
+        }
     }
 }

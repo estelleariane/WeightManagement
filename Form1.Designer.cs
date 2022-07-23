@@ -39,6 +39,8 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.heightUnit = new System.Windows.Forms.ComboBox();
+            this.weightUnit = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -131,11 +133,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // heightUnit
+            // 
+            this.heightUnit.FormattingEnabled = true;
+            this.heightUnit.Items.AddRange(new object[] {
+            "FT",
+            "M"});
+            this.heightUnit.Location = new System.Drawing.Point(249, 108);
+            this.heightUnit.Name = "heightUnit";
+            this.heightUnit.Size = new System.Drawing.Size(121, 23);
+            this.heightUnit.TabIndex = 11;
+            this.heightUnit.Text = "FT";
+            // 
+            // weightUnit
+            // 
+            this.weightUnit.FormattingEnabled = true;
+            this.weightUnit.Items.AddRange(new object[] {
+            "LB",
+            "KG"});
+            this.weightUnit.Location = new System.Drawing.Point(249, 137);
+            this.weightUnit.Name = "weightUnit";
+            this.weightUnit.Size = new System.Drawing.Size(121, 23);
+            this.weightUnit.TabIndex = 12;
+            this.weightUnit.Text = "LB";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.weightUnit);
+            this.Controls.Add(this.heightUnit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
@@ -168,5 +196,7 @@
         private TextBox textBox4;
         private TextBox textBox5;
         private Button button1;
+        private ComboBox heightUnit;
+        private ComboBox weightUnit;
     }
 }
