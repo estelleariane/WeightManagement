@@ -14,7 +14,7 @@ namespace WeightManagement
         public string Name { get; set; }
         public double Weight { get; set; }
         public double Height { get; set; }
-        public double BMi
+        public double Bmi
         {
             get
             {

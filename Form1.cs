@@ -86,9 +86,25 @@ namespace WeightManagement
 
             User person = new User(Name, email, weight, height);
 
-            if (person.BMi <= 18.4)
+            if (person.Bmi <= 18.4)
             {
-                MessageBox.Show("your BMI is " + person.BMi + " you are underweight!");
+                MessageBox.Show("your BMI is " + person.Bmi + " you are Underweight!");
+            }
+
+
+            if (person.Bmi > 18.4 && person.Bmi <= 24.9)
+            {
+                MessageBox.Show("your BMI is " + person.Bmi + " you are Healthy!");
+            }
+
+            if (person.Bmi > 24.9 && person.Bmi <= 39.9)
+            {
+                MessageBox.Show("your BMI is " + person.Bmi + " you are Overweight!");
+            }
+
+            if (person.Bmi >= 40.0)
+            {
+                MessageBox.Show("your BMI is " + person.Bmi + " you are Obese!");
             }
 
         }
