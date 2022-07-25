@@ -29,6 +29,22 @@ namespace WeightManagement
                 ErrorLogging(" Name cannot be empty");
                 return;
             }
+
+            if (String.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("please enter your email!");
+                ErrorLogging(" Email cannot be empty");
+                return;
+            }
+
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            Match match = regex.Match(email);
+            if (!match.Success)
+            {
+                MessageBox.Show("your email is not valid!");
+                return;
+            }
+
             if (String.IsNullOrWhiteSpace(height_Text))
             {
                 MessageBox.Show("please enter your Height!");
@@ -62,20 +78,6 @@ namespace WeightManagement
             if (weight <= 0)
             {
                 MessageBox.Show("please enter a number bigger than 0 for your weight");
-                return;
-            }
-            if (String.IsNullOrWhiteSpace(email))
-            {
-                MessageBox.Show("please enter your email!");
-                ErrorLogging(" Email cannot be empty");
-                return;
-            }
-
-            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-            Match match = regex.Match(email);
-            if (!match.Success)
-            {
-                MessageBox.Show("your email is not valid!");
                 return;
             }
 
