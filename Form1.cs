@@ -26,28 +26,32 @@ namespace WeightManagement
             if (String.IsNullOrWhiteSpace(name))
             {
                 MessageBox.Show("please enter your Name!");
+                ErrorLogging(" Name cannot be empty");
                 return;
             }
             if (String.IsNullOrWhiteSpace(height_Text))
             {
                 MessageBox.Show("please enter your Height!");
+                ErrorLogging(" Height cannot be empty");
                 return;
             }
             if (!double.TryParse(height_Text, out height))
             {
                 MessageBox.Show("please enter a valid number for your height!");
-                ErrorLogging("please enter a valid number for your height!");
+                ErrorLogging(" Height has to be an integer!");
                 return;
             }
             if (height <= 0)
             {
                 MessageBox.Show("please enter a number bigger than 0 for your height");
+                ErrorLogging(" Height cannot be less than 0!");
                 return;
             }
 
             if (String.IsNullOrWhiteSpace(weight_Text))
             {
                 MessageBox.Show("please enter your Weight!");
+                ErrorLogging(" Weight cannot be empty");
                 return;
             }
             if (!double.TryParse(weight_Text, out weight))
@@ -63,6 +67,7 @@ namespace WeightManagement
             if (String.IsNullOrWhiteSpace(email))
             {
                 MessageBox.Show("please enter your email!");
+                ErrorLogging(" Email cannot be empty");
                 return;
             }
 
