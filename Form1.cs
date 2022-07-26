@@ -93,6 +93,12 @@ namespace WeightManagement
 
             User person = new User(Name, email, weight, height);
 
+            if (!person.IsEmailValid())
+            {
+                MessageBox.Show("your email is not valid!");
+                return;
+            }
+
             if (person.Bmi <= 18.4)
             {
                 MessageBox.Show("your BMI is " + person.Bmi + " you are Underweight!");
