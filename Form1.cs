@@ -124,7 +124,7 @@ namespace WeightManagement
 
         private void ErrorLogging(String message)
         {
-            string strPath = @"C:\Temp\Log.txt";
+            string strPath = @"..\..\..\LogFolder\Log.txt";
             if (!File.Exists(strPath))
             {
                 File.Create(strPath).Dispose();
