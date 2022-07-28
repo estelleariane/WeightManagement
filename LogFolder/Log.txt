@@ -14,3 +14,41 @@ Error Message:  Name cannot be empty
 ===========Start============= 28/07/2022 13:25:02
 Error Message:  Email cannot be empty
 ===========End============= 28/07/2022 13:25:02
+=============Error Logging ===========
+===========Start============= 28/07/2022 13:56:13
+Error Message:  Height cannot be empty
+===========End============= 28/07/2022 13:56:13
+=============Error Logging ===========
+===========Start============= 28/07/2022 14:00:09
+Error Message:  Email cannot be empty
+===========End============= 28/07/2022 14:00:09
+=============Error Logging ===========
+===========Start============= 28/07/2022 14:00:55
+Error Message:  Height cannot be empty
+===========End============= 28/07/2022 14:00:55
+=============Error Logging ===========
+===========Start============= 28/07/2022 14:01:04
+Error Message: The specified string is not in the form required for an e-mail address.
+Stack Trace:    at System.Net.Mail.MailAddressParser.TryReadCfwsAndThrowIfIncomplete(String data, Int32 index, Int32& outIndex, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddressParser.TryParseDomain(String data, Int32& index, String& domain, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddressParser.TryParseAddress(String data, Boolean expectMultipleAddresses, Int32& index, ParseAddressInfo& parseAddressInfo, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddressParser.TryParseAddress(String data, ParseAddressInfo& parsedAddress, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddress.TryParse(String address, String displayName, Encoding displayNameEncoding, ValueTuple`4& parsedData, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddress..ctor(String address)
+   at WeightManagement.User.IsEmailValid() in C:\Users\EstelleAriane\source\repos\WeightManagement\User.cs:line 41
+===========End============= 28/07/2022 14:01:04
+=============Error Logging ===========
+===========Start============= 28/07/2022 14:01:59
+Error Message: The specified string is not in the form required for an e-mail address.
+Stack Trace:    at System.Net.Mail.MailAddressParser.TryReadCfwsAndThrowIfIncomplete(String data, Int32 index, Int32& outIndex, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddressParser.TryParseDomain(String data, Int32& index, String& domain, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddressParser.TryParseAddress(String data, Boolean expectMultipleAddresses, Int32& index, ParseAddressInfo& parseAddressInfo, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddressParser.TryParseAddress(String data, ParseAddressInfo& parsedAddress, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddress.TryParse(String address, String displayName, Encoding displayNameEncoding, ValueTuple`4& parsedData, Boolean throwExceptionIfFail)
+   at System.Net.Mail.MailAddress..ctor(String address)
+   at WeightManagement.User.IsEmailValid() in C:\Users\EstelleAriane\source\repos\WeightManagement\User.cs:line 41
+===========End============= 28/07/2022 14:02:00
+=============Error Logging ===========
+===========Start============= 28/07/2022 14:10:36
+Error Message:  Email cannot be empty
+===========End============= 28/07/2022 14:10:36

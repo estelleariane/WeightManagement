@@ -91,7 +91,7 @@ namespace WeightManagement
                 weight = weight / 2.20462262185;
             }
 
-            User person = new User(Name, email, weight, height);
+            User person = new User(email, name, weight, height);
 
             if (!person.IsEmailValid())
             {
